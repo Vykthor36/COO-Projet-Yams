@@ -139,7 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="COO-Projet-Yams.cpp" />
+    <ClCompile Include="brelan.cpp" />
+    <ClCompile Include="figure.cpp" />
+    <ClCompile Include="jeu.cpp" />
+    <ClCompile Include="joueur.cpp" />
+    <ClCompile Include="lancer.cpp" />
+    <ClCompile Include="yams.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="brelan.h" />
+    <ClInclude Include="figure.h" />
+    <ClInclude Include="joueur.h" />
+    <ClInclude Include="lancer.h" />
+    <ClInclude Include="yams.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
