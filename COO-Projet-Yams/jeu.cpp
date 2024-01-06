@@ -1,20 +1,27 @@
 // COO-Projet-Yams.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
-//
 
 #include <iostream>
+#include <list>
+#include "joueur.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "--- LANCEMENT DU JEU DE YAM'S ---" << std::endl;
+    
+    std::string nbJoueurs = "0";
+    while (nbJoueurs.length() != std::to_string(atoi(nbJoueurs.c_str())).length() || stoi(nbJoueurs) <= 1) {
+        std::cout << "Veuillez choisir le nombre de joueurs : ";
+        std::cin >> nbJoueurs;
+
+        if (nbJoueurs.length() != std::to_string(atoi(nbJoueurs.c_str())).length()) std::cout << "Valeur incorrecte. Seuls les nombres entiers >= " << (char)133 << " 2 sont admis .Veuillez recommencer." << std::endl;
+        else if (stoi(nbJoueurs) < 2) std::cout << "Valeur incorrecte. La valeur est un nombre >= " << (char)133 << " 2. Veuillez recommencer." << std::endl;
+    }
+
+    std::list<joueur> listeJoueurs = {};
+    for (int i = 1; i <= stoi(nbJoueurs); i++) {
+        std::string nom;
+        std::cout << "Nom du joueur " << i << " : ";
+        std::cin >> nom;
+        listeJoueurs.push_back(joueur(nom));
+    }
 }
-
-// Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
-// Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
-
-// Astuces pour bien démarrer : 
-//   1. Utilisez la fenêtre Explorateur de solutions pour ajouter des fichiers et les gérer.
-//   2. Utilisez la fenêtre Team Explorer pour vous connecter au contrôle de code source.
-//   3. Utilisez la fenêtre Sortie pour voir la sortie de la génération et d'autres messages.
-//   4. Utilisez la fenêtre Liste d'erreurs pour voir les erreurs.
-//   5. Accédez à Projet > Ajouter un nouvel élément pour créer des fichiers de code, ou à Projet > Ajouter un élément existant pour ajouter des fichiers de code existants au projet.
-//   6. Pour rouvrir ce projet plus tard, accédez à Fichier > Ouvrir > Projet et sélectionnez le fichier .sln.
