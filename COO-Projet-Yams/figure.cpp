@@ -3,8 +3,22 @@
 //Constructeurs
 figure::figure()
 {
-	score = 0;
+	scoreMax = 0;
 	condition = {};
+}
+
+figure::figure(const std::string& n, int s)
+{
+	nom = n;
+	scoreMax = s;
+	condition = {};
+}
+
+figure::figure(const figure& f)
+{
+	nom = f.nom;
+	scoreMax = f.scoreMax;
+	condition = f.condition;
 }
 
 //Destructeur
@@ -14,12 +28,17 @@ figure::~figure()
 }
 
 //Fonctions
-bool figure::verifCondition(std::list<int> L)
+bool figure::verifCondition(std::vector<int> L)
 {
-	return false;
+	return true;
 }
 
-int figure::getScore()
+std::string figure::getNom() const
 {
-	return score;
+	return nom;
+}
+
+int figure::getScore() const
+{
+	return scoreMax;
 }

@@ -140,18 +140,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="brelan.cpp" />
+    <ClCompile Include="chance.cpp" />
     <ClCompile Include="figure.cpp" />
     <ClCompile Include="jeu.cpp" />
     <ClCompile Include="joueur.cpp" />
     <ClCompile Include="lancer.cpp" />
-    <ClCompile Include="yams.cpp" />
+    <ClCompile Include="simple.cpp" />
+    <ClCompile Include="suite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="brelan.h" />
+    <ClInclude Include="chance.h" />
     <ClInclude Include="figure.h" />
     <ClInclude Include="joueur.h" />
     <ClInclude Include="lancer.h" />
-    <ClInclude Include="yams.h" />
+    <ClInclude Include="simple.h" />
+    <ClInclude Include="suite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

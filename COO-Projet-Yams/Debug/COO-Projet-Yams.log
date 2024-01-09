@@ -1,2 +1,9 @@
-﻿  jeu.cpp
-  COO-Projet-Yams.vcxproj -> C:\Users\victo\source\repos\VS\COO-Projet-Yams\Debug\COO-Projet-Yams.exe
+﻿  brelan.cpp
+  figure.cpp
+  jeu.cpp
+  joueur.cpp
+  lancer.cpp
+  suite.cpp
+  Génération de code en cours...
+joueur.obj : error LNK2019: symbole externe non résolu "public: __thiscall brelan<3>::brelan<3>(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)" (??0?$brelan@$02@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z) référencé dans la fonction "public: __thiscall joueur::joueur(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0joueur@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+C:\Users\victo\source\repos\VS\COO-Projet-Yams\Debug\COO-Projet-Yams.exe : fatal error LNK1120: 1 externes non résolus

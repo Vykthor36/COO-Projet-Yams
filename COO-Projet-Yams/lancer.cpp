@@ -1,7 +1,13 @@
 #include "lancer.h"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-std::list<int> lancer::lancerDés()
+std::vector<int> lancer::lancerDés()
 {
-    //TODO
-    return std::list<int>();
+    srand(time(0));
+    std::vector<int> L;
+    for (int i = 0; i < 5; i++) L.push_back(rand() % 6 + 1);
+
+    return L;
 }

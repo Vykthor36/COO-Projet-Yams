@@ -1,10 +1,10 @@
 #pragma once
-#include <list>
+#include <vector>
 
 class lancer
 {
 public:
 	//Signatures des méthodes
-	static std::list<int> lancerDés();
+	static std::vector<int> lancerDés();
 };
 
