@@ -18,7 +18,7 @@ public:
 	figure(const figure& f);
 
 	//Signature du destructeur
-	~figure();
+	virtual ~figure();
 
 	//Signatures des fonctions
 	virtual bool verifCondition(std::vector<int> L);

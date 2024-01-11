@@ -50,13 +50,17 @@ void joueur::jouer()
 
 	int nbLancers = 0;
 	bool testLancer = true;
-	while (testLancer && nbLancers < 3) {
+	std::vector<int> resLancer;
+	while (testLancer && nbLancers <= 3) {
 		std::vector<figure*> resSimples = {};
 		std::vector<figure*> resFigures = {};
 		std::string coup;
 
-		std::vector<int> resLancer = lancer::lancerDés();
-		nbLancers++;
+		if (resLancer.empty()) {
+			resLancer = lancer::lancerDés();
+			nbLancers++;
+		}
+		
 		std::cout << "R" << char(130) << "sultat du lancer " << nbLancers << " : ";
 		for (int i = 0; i < 5; i++) {
 			if (unsigned(i) < resLancer.size() - 1) std::cout << resLancer.at(i) << " - ";
@@ -94,7 +98,40 @@ void joueur::jouer()
 			std::cout << "Chosissez votre coup pour cette manche : ";
 			std::getline(std::cin, coup);
 			std::transform(coup.begin(), coup.end(), coup.begin(), ::tolower);
-			if (coup == "relancer") testCoup = true;
+			if (coup == "relancer" && nbLancers < 3) {
+				testCoup = true;
+
+				bool testRelance = false;
+				while (!testRelance) {
+					bool testR = false;
+					std::string relance;
+					std::cout << "Num" << char(130) << "ro que vous voulez rejouer : ";
+					std::getline(std::cin, relance);
+					std::transform(relance.begin(), relance.end(), relance.begin(), ::tolower);
+					if (relance == "relancer") {
+						if (resLancer.empty() || resLancer.size() == 5) resLancer = lancer::lancerDés();
+						else for (int i = 0; i <= 6 - resLancer.size(); i++) resLancer.push_back(lancer::lancerDé());
+
+						testRelance = true;
+						testR = true;
+						nbLancers++;
+					}
+					else {
+						int r = atoi(relance.c_str());
+						if (relance.length() != std::to_string(r).length() || r > 6) std::cout << "Cette valeur n'est pas un r" << char(130) << "sultat de d" << char(130) << " compatible. Veuillez recommencer." << std::endl;
+						else { 
+							bool testR = false;
+							for (int i = 0; i < resLancer.size(); i++) if (resLancer.at(i) == r) {
+								resLancer.erase(resLancer.begin() + i);
+								testR = true;
+								break;
+							}
+
+							if (testR == false) std::cout << "Cette valeur n'est pas dans vos d" << char(130) << "s actuels. Veuillez recommencer." << std::endl;
+						}
+					}
+				}
+			}
 
 			for (int i = 0; unsigned(i) < listeSimples.size(); i++) {
 				std::string nomSimple = listeSimples.at(i)->getNom();
@@ -108,7 +145,7 @@ void joueur::jouer()
 						if (resNom == coup) pointsMin += f->getScore();
 					}
 
-					listeSimples.at(i) = nullptr;
+					delete(listeSimples.at(i));
 					listeSimples.erase(listeSimples.begin() + i);
 
 					if (listeSimples.empty() && pointsMin >= 63) {
@@ -121,7 +158,6 @@ void joueur::jouer()
 			for (int i = 0; unsigned(i) < listeFigures.size(); i++) {
 				std::string nomFigure = listeFigures.at(i)->getNom();
 				std::transform(nomFigure.begin(), nomFigure.end(), nomFigure.begin(), ::tolower);
-				//std::cout << nomFigure << "/" << coup << std::endl;
 				if (nomFigure == coup) {
 					testLancer = false;
 					testCoup = true;

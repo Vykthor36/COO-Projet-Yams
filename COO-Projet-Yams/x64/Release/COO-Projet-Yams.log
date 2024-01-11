@@ -2,10 +2,9 @@
 C:\Users\victo\source\repos\VS\COO-Projet-Yams\COO-Projet-Yams\simple.h(31,1): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
 C:\Users\victo\source\repos\VS\COO-Projet-Yams\COO-Projet-Yams\simple.h(30): message : pendant la compilation de la fonction membre classe modèle 'int simple<6>::getScore(void) const'
 C:\Users\victo\source\repos\VS\COO-Projet-Yams\COO-Projet-Yams\joueur.cpp(26): message : voir la référence à l'instanciation classe modèle 'simple<6>' en cours de compilation
-  suite.cpp
   Génération de code en cours
-  5 of 524 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+  1 of 558 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    12 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   COO-Projet-Yams.vcxproj -> C:\Users\victo\source\repos\VS\COO-Projet-Yams\x64\Release\COO-Projet-Yams.exe

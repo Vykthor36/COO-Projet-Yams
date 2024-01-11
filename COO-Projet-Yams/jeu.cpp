@@ -27,7 +27,7 @@ int main()
     }
 
     //LANCEMENT DU JEU
-    for (int i = 1; i <= 10; i++) {
+    for (int i = 1; i <= 13; i++) {
         std::cout << "\n--- MANCHE " << i << " ---" << std::endl;
         for (joueur& j : listeJoueurs) j.jouer();
     }

@@ -11,3 +11,8 @@ std::vector<int> lancer::lancerDés()
 
     return L;
 }
+
+int lancer::lancerDé()
+{
+    return rand() % 6 +1;
+}
